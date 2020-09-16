@@ -68,7 +68,7 @@
     }
 
     async function getFriendship() {
-      const friend = awiat liff.getFriendship()
+      const friend = await liff.getFriendship()
       document.getElementById("friendship").append(friend.friendFlag)
       if (!friend.friendFlag){
         if (confirm("add bot now?")){
