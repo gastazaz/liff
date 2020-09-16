@@ -55,12 +55,12 @@
     }
 
     async function shareMsg() {
-      await liff.shareTargetPicker({ // up to 5 bubble
-        {
+      await liff.shareTargetPicker([
+        { // up to 5 bubble
           "type":"text",
           "text":"this message is from liff.shareTargetPicker"
         }
-      })
+      ])
     }
 
     function logOut() {
