@@ -29,7 +29,9 @@
   <p id="friendship"><b>isFriendship:</b> </p>
 
   <p id="scanCode"><b>Code:</b> </p>
+  
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
+
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="liff/path/?param=9">Link to Path</a></p>
@@ -53,6 +55,12 @@
     }
 
     async function shareMsg() {
+      await liff.shareTargetPicker({ // up to 5 bubble
+        {
+          "type":"text",
+          "text":"this message is from liff.shareTargetPicker"
+        }
+      })
     }
 
     function logOut() {
