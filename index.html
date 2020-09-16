@@ -148,17 +148,19 @@
     }
 
     async function main() {
+      liff.ready.then(() => {
+        document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+        if (liff.isLoggedIn()){
+          getEnvironment()
+          getUserProfile()
+          getContext()
+          getFriendship() // wether user is already friend of the chatbot
+          createUniversalLink() // for share link to external line
+        } else {
+          liff.login()
+        }
+      })
       await liff.init({ liffId: "1654926999-bDNPQww4" })
-      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
-      if (liff.isLoggedIn()){
-        getEnvironment()
-        getUserProfile()
-        getContext()
-        getFriendship() // wether user is already friend of the chatbot
-      } else {
-        //liff.login()
-      }
-      createUniversalLink() // for share link to external line
     }
     main()
   </script>
