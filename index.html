@@ -19,11 +19,13 @@
   <p id="statusMessage"><b>statusMessage:</b> </p>
 
   <p id="decodedIDToken"><b>email:</b> </p>
+
   <p id="type"><b>type:</b> </p>
   <p id="viewType"><b>viewType:</b> </p>
   <p id="utouId"><b>utouId:</b> </p>
   <p id="roomId"><b>roomId:</b> </p>
   <p id="groupId"><b>groupId:</b> </p>
+  
   <p id="friendship"><b>isFriendship:</b> </p>
   <p id="scanCode"><b>Code:</b> </p>
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
@@ -71,6 +73,11 @@
     }
 
     function getContext() {
+      document.getElementById("type").append(liff.getContext().type) // individual group browser blabla
+      document.getElementById("viewType").append(liff.getContext().viewType)
+      document.getElementById("utouId").append(liff.getContext().utouId) // only 1-1 chat
+      document.getElementById("roomId").append(liff.getContext().roomId) // only group chat
+      document.getElementById("groupId").append(liff.getContext().groupId)
     }
 
     async function getUserProfile() {
@@ -102,7 +109,7 @@
       await liff.init({ liffId: "1654926999-bDNPQww4" })
       getEnvironment()
       getUserProfile()
-      // getContext()
+      getContext()
       // getFriendship()
       // createUniversalLink()
     }
